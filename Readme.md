@@ -4,7 +4,7 @@
 
 <h1 align="center"> Hey 👋🏻, I'm Raj </br> 
 </h1>
-<p align="center">Software Developer Engineer</p>
+<p align="center">Software Engineer</p>
 
 <p align="center">
 <a href="https://auth.geeksforgeeks.org/user/ayerajkumar/practice" target="_blank"><img alt="" src="https://img.shields.io/badge/GeeksforGeeks-000?logo=GeeksforGeeks&logoColor=2FF200&style=for-the-badge" style="vertical-align:center" /></a>

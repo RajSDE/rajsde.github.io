@@ -1,4 +1,4 @@
-</p><img src="https://komarev.com/ghpvc/?username=RajSDE&label=Profile%20Visitors&color=0e75b6&style=flat" alt="RajSDE" />
+</p><img src="https://komarev.com/ghpvc/?username=RajSDE&label=Profile%20Visitors&color=000000&style=flat" alt="RajSDE" />
 
 
 
@@ -8,9 +8,9 @@
 
 <p align="center">
 <a href="https://auth.geeksforgeeks.org/user/ayerajkumar/practice" target="_blank"><img alt="" src="https://img.shields.io/badge/GeeksforGeeks-000?logo=GeeksforGeeks&logoColor=2FF200&style=for-the-badge" style="vertical-align:center" /></a>
-<a href="https://linkedin.com/in/ayerajkumar" target="_blank"><img alt="" src="https://img.shields.io/badge/LinkedIn-3E5CE5?logo=linkedin&logoColor=fff&style=for-the-badge" style="vertical-align:center" /></a>
-<a href="https://instagram.com/HeyRajSingh" target="_blank"><img alt="" src="https://img.shields.io/badge/instagram-DC007B?logo=instagram&logoColor=000000&style=for-the-badge" style="vertical-align:center" /></a>
-<a href="https://leetcode.com/ayerajkumar/" target="_blank"><img alt="" src="https://img.shields.io/badge/Leetcode-000?logo=leetcode&logoColor=FFF926&style=for-the-badge" style="vertical-align:center" /></a></p>
+<a href="https://linkedin.com/in/RajSDE" target="_blank"><img alt="" src="https://img.shields.io/badge/LinkedIn-3E5CE5?logo=linkedin&logoColor=fff&style=for-the-badge" style="vertical-align:center" /></a>
+<a href="https://instagram.com/er_raj.kumar" target="_blank"><img alt="" src="https://img.shields.io/badge/instagram-DC007B?logo=instagram&logoColor=000000&style=for-the-badge" style="vertical-align:center" /></a>
+<a href="https://leetcode.com/RajSDE/" target="_blank"><img alt="" src="https://img.shields.io/badge/Leetcode-000?logo=leetcode&logoColor=FFF926&style=for-the-badge" style="vertical-align:center" /></a></p>
 
 Hey !!!, I'm Software Development Engineer, working in Product Based MNC, I got extensive experience in Java technologies, with Spring Boot, Microservices, Rest API, Database, MySQL, Postgres, Linux, System Designing...
 
@@ -54,7 +54,7 @@ Hey !!!, I'm Software Development Engineer, working in Product Based MNC, I got 
 <img align="right" alt="GIF" src="https://www.mygo.ge/uploads/blog/1584023795.jpg" height = "50%" width = "50%"/>
 
 ## Connect with me 🤝
-[![GitHub followers](https://img.shields.io/github/followers/RajSDE?style=social)](https://www.github.com/RajSDE) [![Linkedin Badge](https://img.shields.io/badge/-AyeRajKumar-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/ayerajkumar/)](https://www.linkedin.com/in/ayerajkumar/) [![Instagram Badge](https://img.shields.io/badge/-HeyRajSingh-black?style=flat-square&logo=Instagram&logoColor=FB00BA&link=https://www.instagram.com/heyrajsingh/)](https://www.instagram.com/heyrajsingh/) [![Twitter Follow](https://img.shields.io/twitter/follow/AyeRajSingh?style=social)](https://www.twitter.com/AyeRajSingh) [![Facebook Badge](https://img.shields.io/badge/-HeyRajSingh-blue?style=flat-square&logo=Facebook&logoColor=white&link=https://www.facebook.com/heyrajsingh)](https://www.facebook.com/heyrajsingh)
+[![GitHub followers](https://img.shields.io/github/followers/RajSDE?style=social)](https://www.github.com/RajSDE) [![Linkedin Badge](https://img.shields.io/badge/-RajSDE-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/RajSDE/)](https://www.linkedin.com/in/RajSDE/) [![Instagram Badge](https://img.shields.io/badge/-er_raj.kumar-black?style=flat-square&logo=Instagram&logoColor=FB00BA&link=https://www.instagram.com/er_raj.kumar/)](https://www.instagram.com/er_raj.kumar/) [![Twitter Follow](https://img.shields.io/twitter/follow/Raj_SDE?style=social)](https://www.twitter.com/Raj_SDE) [![Facebook Badge](https://img.shields.io/badge/-HeyRajSingh-blue?style=flat-square&logo=Facebook&logoColor=white&link=https://www.facebook.com/heyrajsingh)](https://www.facebook.com/heyrajsingh)
 
 
 

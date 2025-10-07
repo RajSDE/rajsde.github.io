@@ -1,0 +1,60 @@
+{
+  "repositories": [
+    {
+      "title": "MachineLearning",
+      "description": "Machine Learning algorithms practice repository with implementations in Python and Jupyter notebooks for hands-on learning.",
+      "url": "https://github.com/RajSDE/MachineLearning",
+      "isActive": true,
+      "language": "Python",
+      "topics": ["machine-learning", "python", "jupyter", "algorithms"]
+    },
+    {
+      "title": "Spring Boot Microservices",
+      "description": "Enterprise-grade microservices architecture with Spring Boot, featuring payment gateways, security, and scalable design patterns.",
+      "url": "https://github.com/RajSDE/SpringBootProjects",
+      "isActive": false,
+      "language": "Java",
+      "topics": ["spring-boot", "microservices", "java", "enterprise"]
+    },
+    {
+      "title": "System Design Archive",
+      "description": "Comprehensive collection of system design patterns, architectural decisions, and scalability solutions for modern applications.",
+      "url": "https://github.com/RajSDE/SystemDesignNotes",
+      "isActive": false,
+      "language": "Markdown",
+      "topics": ["system-design", "architecture", "scalability", "patterns"]
+    },
+    {
+      "title": "DSA Mastery",
+      "description": "Advanced data structures and algorithms implementation with complexity analysis and real-world problem solutions.",
+      "url": "https://github.com/RajSDE/DSAPractice",
+      "isActive": false,
+      "language": "Java",
+      "topics": ["algorithms", "data-structures", "problem-solving", "coding"]
+    },
+    {
+      "title": "Full-Stack Projects",
+      "description": "Modern web applications built with cutting-edge technologies, featuring responsive design and optimal performance.",
+      "url": "https://github.com/RajSDE/WebProjects",
+      "isActive": false,
+      "language": "JavaScript",
+      "topics": ["react", "nodejs", "full-stack", "web-development"]
+    },
+    {
+      "title": "DevOps Toolkit",
+      "description": "Production-ready DevOps automation scripts, containerization configs, and CI/CD pipeline implementations.",
+      "url": "https://github.com/RajSDE/DevOpsScripts",
+      "isActive": false,
+      "language": "Shell",
+      "topics": ["devops", "docker", "kubernetes", "ci-cd"]
+    }
+  ],
+  "settings": {
+    "siteName": "RajSDE",
+    "heroTitle": "Software Engineer & Innovator",
+    "heroSubtitle": "Building scalable solutions with modern technologies",
+    "heroDescription": "Passionate about creating robust software architectures, exploring machine learning frontiers, and solving complex engineering challenges.",
+    "githubProfile": "https://github.com/RajSDE",
+    "linkedinProfile": "https://linkedin.com/in/RajSDE"
+  }
+}

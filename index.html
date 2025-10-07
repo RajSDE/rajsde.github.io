@@ -610,7 +610,7 @@
 
         async function initializePage() {
             try {
-                const response = await fetch('repositories.json');
+                const response = await fetch('resources/repositories.json');
                 if (!response.ok) throw new Error('Failed to load configuration');
 
                 config = await response.json();

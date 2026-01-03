@@ -451,6 +451,11 @@ html {
     scroll-behavior: smooth;
 }
 
+section {
+    scroll-margin-top: 40px;
+    /* Adjusts the scroll stop point */
+}
+
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -460,4 +465,152 @@ html {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Newly added */
+
+/* --- PASTE THIS AT THE BOTTOM OF style.css --- */
+
+.section-padding {
+    padding: 40px 0;
+}
+
+/* Service Card - Exact replica of Product/Repo Card */
+.service-card {
+    background: white;
+    border-radius: 16px;
+    /* Matches Product Card radius */
+    border: none;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    /* Required for the top border */
+    padding: 2rem;
+    /* Matches Product Card padding */
+    display: flex;
+    flex-direction: column;
+}
+
+/* The Top Gradient Border (The key visual feature) */
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+/* Hover Effects - Lift and Shadow */
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Icon Styling - Adjusted to fit the Left-Aligned layout */
+.icon-box {
+    width: 50px;
+    height: 50px;
+    background: rgba(37, 99, 235, 0.1);
+    /* Light Blue Background */
+    color: var(--primary);
+    border-radius: 12px;
+    /* Soft square to match modern look */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+/* Icon Hover Effect */
+.service-card:hover .icon-box {
+    background: var(--primary);
+    color: white;
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Typography */
+.service-card h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    /* Remove default margin for better alignment */
+    color: var(--dark);
+}
+
+.service-card p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+}
+
+/* Contact Section Styling */
+.bg-black {
+    background-color: #000;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    max-width: 700px;
+    /* Limits width so it doesn't stretch too wide on large screens */
+    margin: 0 auto;
+    /* Centers the card */
+}
+
+
+/* --- LinkedIn Badge Styling --- */
+.linkedin-badge-wrapper {
+    background: white;
+    border-radius: 16px;
+    padding: 8px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+/* Desktop Style (Hero Section) */
+.linkedin-badge-wrapper.desktop-view {
+    transform: rotate(-2deg);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.linkedin-badge-wrapper.desktop-view:hover {
+    transform: rotate(0deg) scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Style (Navbar) */
+.linkedin-badge-wrapper.mobile-view {
+    transform: none;
+    /* No rotation in menu */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin-top: 1.5rem;
+    /* Space from the links */
+    margin-bottom: 1rem;
+}
+
+/* --- Mobile Navigation Centering --- */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        text-align: center;
+        /* Centers text content */
+    }
+
+    .navbar-nav {
+        align-items: center;
+        /* Centers flex items (links) */
+        padding-bottom: 1rem;
+    }
+
+    /* Remove the left margin we use on desktop so it centers perfectly */
+    .nav-link {
+        margin-left: 0 !important;
+        margin-bottom: 0.5rem;
+    }
 }

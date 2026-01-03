@@ -1,60 +1,84 @@
 {
-  "repositories": [
-    {
-      "title": "MachineLearning",
-      "description": "Machine Learning algorithms practice repository with implementations in Python and Jupyter notebooks for hands-on learning.",
-      "url": "https://github.com/RajSDE/MachineLearning",
-      "isActive": true,
-      "language": "Python",
-      "topics": ["machine-learning", "python", "jupyter", "algorithms"]
-    },
-    {
-      "title": "Spring Boot Microservices",
-      "description": "Enterprise-grade microservices architecture with Spring Boot, featuring payment gateways, security, and scalable design patterns.",
-      "url": "https://github.com/RajSDE/SpringBootProjects",
-      "isActive": false,
-      "language": "Java",
-      "topics": ["spring-boot", "microservices", "java", "enterprise"]
-    },
-    {
-      "title": "System Design Archive",
-      "description": "Comprehensive collection of system design patterns, architectural decisions, and scalability solutions for modern applications.",
-      "url": "https://github.com/RajSDE/SystemDesignNotes",
-      "isActive": false,
-      "language": "Markdown",
-      "topics": ["system-design", "architecture", "scalability", "patterns"]
-    },
-    {
-      "title": "DSA Mastery",
-      "description": "Advanced data structures and algorithms implementation with complexity analysis and real-world problem solutions.",
-      "url": "https://github.com/RajSDE/DSAPractice",
-      "isActive": false,
-      "language": "Java",
-      "topics": ["algorithms", "data-structures", "problem-solving", "coding"]
-    },
-    {
-      "title": "Full-Stack Projects",
-      "description": "Modern web applications built with cutting-edge technologies, featuring responsive design and optimal performance.",
-      "url": "https://github.com/RajSDE/WebProjects",
-      "isActive": false,
-      "language": "JavaScript",
-      "topics": ["react", "nodejs", "full-stack", "web-development"]
-    },
-    {
-      "title": "DevOps Toolkit",
-      "description": "Production-ready DevOps automation scripts, containerization configs, and CI/CD pipeline implementations.",
-      "url": "https://github.com/RajSDE/DevOpsScripts",
-      "isActive": false,
-      "language": "Shell",
-      "topics": ["devops", "docker", "kubernetes", "ci-cd"]
-    }
-  ],
   "settings": {
     "siteName": "RajSDE",
-    "heroTitle": "Software Engineer & Freelancer",
-    "heroSubtitle": "Building scalable solutions with modern technologies",
-    "heroDescription": "Passionate about creating robust software architectures, exploring machine learning frontiers, and solving complex engineering challenges.",
+    "heroTitle": "Backend Architect & Freelance Consultant",
+    "heroSubtitle": "Specializing in High-Performance Microservices & Infrastructure",
+    "heroDescription": "I build scalable backend systems, configure enterprise-grade load balancers, and design robust API Gateways for startups and MNCs.",
     "githubProfile": "https://github.com/RajSDE",
-    "linkedinProfile": "https://linkedin.com/in/RajSDE"
-  }
+    "linkedinProfile": "https://linkedin.com/in/RajSDE",
+    "email": "rajkumar.forbusiness@gmail.com"
+  },
+  "services": [
+    {
+      "icon": "fa-server",
+      "title": "Microservices Development",
+      "description": "Decomposing monoliths into scalable Spring Boot microservices. Implementation of Service Registry, Circuit Breakers, and Distributed Tracing.",
+      "topics": [
+        "Spring Boot",
+        "Java 17",
+        "Docker",
+        "Microservices"
+      ]
+    },
+    {
+      "icon": "fa-network-wired",
+      "title": "API Gateway & Load Balancing",
+      "description": "Configuration of Nginx reverse proxies, API Gateways, and Load Balancers to handle high traffic with 99.9% uptime reliability.",
+      "topics": [
+        "Nginx",
+        "Linux",
+        "Security",
+        "Networking"
+      ]
+    },
+    {
+      "icon": "fa-database",
+      "title": "Backend Optimization",
+      "description": "Database tuning, query optimization, and setting up config servers. I fix slow APIs and optimize infrastructure costs.",
+      "topics": [
+        "PostgreSQL",
+        "Redis",
+        "SQL Tuning",
+        "Cost-Opt"
+      ]
+    }
+  ],
+  "products": [
+    {
+      "title": "E-Commerce Backend Core",
+      "description": "Decomposing monoliths into scalable Spring Boot microservices. Implementation of Service Registry, Circuit Breakers, and Distributed Tracing.",
+      "url": "https://github.com/RajSDE/Ecommerce-Core",
+      "isActive": true,
+      "language": "Java",
+      "topics": [
+        "Spring Boot",
+        "Kafka",
+        "Microservices"
+      ]
+    },
+    {
+      "title": "Custom API Gateway Wrapper",
+      "description": "A lightweight wrapper around Nginx for dynamic routing and rate limiting configurations.",
+      "url": "https://github.com/RajSDE/Nginx-Wrapper",
+      "isActive": true,
+      "language": "Shell",
+      "topics": [
+        "Nginx",
+        "DevOps",
+        "Lua"
+      ]
+    },
+    {
+      "title": "FinTech Transaction Engine",
+      "description": "High-concurrency ledger system designed for accuracy and speed in financial transactions.",
+      "url": "#",
+      "isActive": true,
+      "language": "Java",
+      "topics": [
+        "Fintech",
+        "Concurrency",
+        "SQL"
+      ]
+    }
+  ]
 }

@@ -1,12 +1,10 @@
 let config = {};
 
-// Language colors mapping
 const languageColors = {
-    'Python': 'language-python',
     'Java': 'language-java',
-    'JavaScript': 'language-javascript',
     'Shell': 'language-shell',
-    'Markdown': 'language-markdown'
+    'Python': 'language-python',
+    'JavaScript': 'language-javascript',
 };
 
 async function initializePage() {
@@ -15,166 +13,130 @@ async function initializePage() {
         if (!response.ok) throw new Error('Failed to load configuration');
 
         config = await response.json();
-        updatePageContent();
-        renderRepositories();
+
+        updateHeader();
+        renderServices();
+        renderProducts();
         initializeAnimations();
 
-        document.getElementById('loading').classList.add('d-none');
-        document.getElementById('repositories-container').classList.remove('d-none');
+        const loading = document.getElementById('loading');
+        const container = document.getElementById('products-container');
+
+        if (loading) loading.classList.add('d-none');
+        if (container) container.classList.remove('d-none');
 
     } catch (error) {
-        console.error('Error loading configuration:', error);
-        showError();
+        console.error('Error:', error);
     }
 }
 
-function updatePageContent() {
-    const settings = config.settings;
+function updateHeader() {
+    const s = config.settings;
+    document.getElementById('site-name').innerHTML = `<i class="fas fa-code me-2"></i>${s.siteName}`;
+    document.getElementById('hero-title').textContent = s.heroTitle;
+    document.getElementById('hero-subtitle').textContent = s.heroSubtitle;
+    document.getElementById('hero-description').textContent = s.heroDescription;
 
-    // Debug: Check if settings are loaded
-    console.log('Settings loaded:', settings);
+    // Update Email Button
+    const emailBtn = document.getElementById('contact-email-btn');
+    if (emailBtn && s.email) emailBtn.href = `mailto:${s.email}`;
 
-    document.getElementById('site-name').innerHTML = `<i class="fas fa-code me-2"></i>${settings.siteName}`;
-    document.getElementById('hero-title').textContent = settings.heroTitle;
-    document.getElementById('hero-subtitle').textContent = settings.heroSubtitle;
-    document.getElementById('hero-description').textContent = settings.heroDescription;
-
-    // Update all links - ADD ERROR CHECKING
-    const githubProfile = settings.githubProfile;
-    const linkedinProfile = settings.linkedinProfile;
-
-    // Update all GitHub and LinkedIn links
-    const githubLink = document.getElementById('github-link');
-    const linkedinLink = document.getElementById('linkedin-link');
-    const heroGithubLink = document.getElementById('hero-github-link');
-    const footerGithubLink = document.getElementById('footer-github-link');
-    const footerLinkedinLink = document.getElementById('footer-linkedin-link');
-
-    if (githubLink) githubLink.href = githubProfile;
-    if (linkedinLink) linkedinLink.href = linkedinProfile;
-    if (heroGithubLink) heroGithubLink.href = githubProfile;
-    if (footerGithubLink) footerGithubLink.href = githubProfile;
-    if (footerLinkedinLink) footerLinkedinLink.href = linkedinProfile;
-
-    // Debug: Check if links were updated
-    console.log('GitHub link updated:', footerGithubLink?.href);
-    console.log('LinkedIn link updated:', footerLinkedinLink?.href);
+    // Links
+    const linkedIn = document.getElementById('footer-linkedin-link');
+    const github = document.getElementById('footer-github-link');
+    if (linkedIn) linkedIn.href = s.linkedinProfile;
+    if (github) github.href = s.githubProfile;
 }
 
+// 1. Render Services (Now handles TOPICS)
+function renderServices() {
+    const container = document.getElementById('services-container');
+    if (!container) return;
 
-function renderRepositories() {
-    const container = document.getElementById('repositories-container');
     container.innerHTML = '';
 
-    config.repositories.forEach((repo, index) => {
-        const repoCard = createRepositoryCard(repo);
-        repoCard.style.animationDelay = `${index * 0.1}s`;
-        container.appendChild(repoCard);
-    });
-}
+    config.services.forEach((service, index) => {
+        const div = document.createElement('div');
+        div.className = 'col-lg-4 fade-in';
 
-function createRepositoryCard(repo) {
-    const colDiv = document.createElement('div');
-    colDiv.className = 'col-lg-4 col-md-6 fade-in';
-
-    const cardClass = repo.isActive ? 'card repo-card' : 'card repo-card inactive';
-    const languageColorClass = languageColors[repo.language] || 'language-python';
-
-    colDiv.innerHTML = `
-                <div class="${cardClass}">
-                    ${repo.isActive ?
-            '<span class="status-badge badge-active">Active</span>' :
-            '<span class="status-badge badge-coming-soon">Coming Soon</span>'
-        }
-                    
-                    <div class="card-header-modern">
-                        <h5 class="repo-title">
-                            <i class="fab fa-github"></i>
-                            ${repo.title}
-                        </h5>
-                        <div class="repo-language">
-                            <span class="language-dot ${languageColorClass}"></span>
-                            ${repo.language}
-                        </div>
-                    </div>
-                    
-                    <div class="card-body-modern">
-                        <p class="repo-description">${repo.description}</p>
-                        
-                        <div class="repo-topics">
-                            ${repo.topics.map(topic =>
+        // Handle topics for Services
+        const topicsHtml = (service.topics || []).map(topic =>
             `<span class="topic-tag">${topic}</span>`
-        ).join('')}
-                        </div>
+        ).join('');
+
+        div.innerHTML = `
+            <div class="service-card h-100">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="icon-box me-3">
+                        <i class="fas ${service.icon} fa-lg"></i>
                     </div>
-                    
-                    <div class="card-footer-modern">
-                        ${repo.isActive ?
-            `<a href="${repo.url}"  class="repo-btn repo-btn-primary">
-                                <i class="fas fa-external-link-alt me-2"></i>View Repository
-                            </a>` :
-            `<button class="repo-btn repo-btn-disabled" disabled>
-                                <i class="fas fa-clock me-2"></i>Coming Soon
-                            </button>`
-        }
-                    </div>
+                    <h4 class="fw-bold mb-0">${service.title}</h4>
                 </div>
-            `;
-
-    return colDiv;
+                
+                <p class="text-muted mb-4 flex-grow-1">${service.description}</p>
+                
+                <div class="repo-topics mt-auto">
+                    ${topicsHtml}
+                </div>
+            </div>
+        `;
+        container.appendChild(div);
+    });
 }
 
-function showError() {
-    document.getElementById('loading').classList.add('d-none');
-    document.getElementById('error').classList.remove('d-none');
+// 2. Render Products (Restored the Buttons)
+// REPLACE your existing renderProducts function with this:
+
+function renderProducts() {
+    const container = document.getElementById('products-container');
+    if (!container) return;
+
+    // Clear container
+    container.innerHTML = '';
+
+    config.products.forEach((prod, index) => {
+        const div = document.createElement('div');
+        div.className = 'col-lg-4 col-md-6 fade-in';
+
+        div.innerHTML = `
+            <div class="service-card h-100 ${!prod.isActive ? 'inactive' : ''}">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <h5 class="fw-bold mb-0">${prod.title}</h5>
+                    ${prod.isActive ?
+                '<span class="badge bg-success-subtle text-success rounded-pill">Ready</span>' :
+                '<span class="badge bg-secondary-subtle text-secondary rounded-pill">In Dev</span>'
+            }
+                </div>
+                
+                <p class="text-muted small mb-3 flex-grow-1">${prod.description}</p>
+                
+                <div class="repo-topics mt-auto">
+                    ${prod.topics.map(t => `<span class="topic-tag">${t}</span>`).join('')}
+                </div>
+            </div>
+        `;
+        container.appendChild(div);
+    });
 }
 
+// Animations and Smooth Scroll
 function initializeAnimations() {
-    // Navbar scroll effect
     window.addEventListener('scroll', () => {
-        const navbar = document.getElementById('mainNav');
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
+        const nav = document.getElementById('mainNav');
+        if (nav) {
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
         }
     });
-
-    // Fade in animation on scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
+            if (entry.isIntersecting) entry.target.classList.add('visible');
         });
-    }, observerOptions);
+    }, { threshold: 0.1 });
 
-    document.querySelectorAll('.fade-in').forEach(el => {
-        observer.observe(el);
-    });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 }
 
-// Initialize on DOM ready
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Initialize Page Data
-    initializePage();
+document.addEventListener('DOMContentLoaded', initializePage);
 
-    // 2. Setup Smooth Scrolling (Moved inside here for safety)
-    document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(anchor => {
-        const href = anchor.getAttribute('href');
-        if (href.startsWith('#') && href.length > 1) {
-            anchor.addEventListener('click', function (e) {
-                const target = document.querySelector(href);
-                if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        }
-    });
-});

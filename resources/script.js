@@ -45,6 +45,7 @@ function updateHeader() {
     document.getElementById('hero-title').textContent = s.heroTitle;
     document.getElementById('hero-subtitle').textContent = s.heroSubtitle;
     document.getElementById('hero-description').textContent = s.heroDescription;
+    document.getElementById('hero-mail').textContent = s.businessEmail + ' ' + s.email;
 
     const emailBtn = document.getElementById('contact-email-btn');
     if (emailBtn && s.email) emailBtn.href = `mailto:${s.email}`;

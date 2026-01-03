@@ -418,9 +418,10 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 560px) {
     .hero-section {
         text-align: center;
+        padding-top: 60px;
     }
 
     .hero-content {
@@ -616,20 +617,16 @@ section {
     display: inline-flex;
     align-items: center;
     background: rgba(16, 185, 129, 0.15);
-    /* Slightly more visible background */
-    color: #ffffff;
-    /* TEXT IS NOW WHITE */
+    color: #000000;
     border: 1px solid rgba(16, 185, 129, 0.4);
     padding: 8px 16px;
     border-radius: 50px;
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 400;
     letter-spacing: 0.5px;
     backdrop-filter: blur(4px);
-    /* specific glass effect */
 }
 
-/* The Green Dot (Unchanged) */
 .status-dot {
     width: 8px;
     height: 8px;
@@ -638,10 +635,8 @@ section {
     margin-right: 10px;
     position: relative;
     box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
-    /* Glow effect */
 }
 
-/* Pulsing Animation Effect (Unchanged) */
 .status-dot::before {
     content: '';
     position: absolute;
@@ -653,6 +648,13 @@ section {
     background-color: inherit;
     border-radius: 50%;
     animation: pulse-ring 2s infinite;
+}
+
+@media (max-width: 991px) {
+    .badge-availability {
+        font-size: 0.6rem;
+    }
+
 }
 
 @keyframes pulse-ring {

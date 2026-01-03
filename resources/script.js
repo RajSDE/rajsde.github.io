@@ -30,39 +30,31 @@ async function initializePage() {
     }
 }
 
-// REPLACE your existing updateHeader function with this:
 
 function updateHeader() {
     const s = config.settings;
-    
-    // 1. Update Site Name & Link it to Email
     const siteNameEl = document.getElementById('site-name');
     if (siteNameEl) {
         siteNameEl.innerHTML = `<i class="fas fa-code me-2"></i>${s.siteName}`;
-        
-        // Set the href to mailto
+
         if (s.email) {
             siteNameEl.href = `mailto:${s.email}`;
         }
     }
 
-    // 2. Update Hero Section Text
     document.getElementById('hero-title').textContent = s.heroTitle;
     document.getElementById('hero-subtitle').textContent = s.heroSubtitle;
     document.getElementById('hero-description').textContent = s.heroDescription;
-    
-    // 3. Update Contact Button in Hero
-    const emailBtn = document.getElementById('contact-email-btn');
-    if(emailBtn && s.email) emailBtn.href = `mailto:${s.email}`;
 
-    // 4. Update Social Links
+    const emailBtn = document.getElementById('contact-email-btn');
+    if (emailBtn && s.email) emailBtn.href = `mailto:${s.email}`;
+
     const linkedIn = document.getElementById('footer-linkedin-link');
     const github = document.getElementById('footer-github-link');
-    if(linkedIn) linkedIn.href = s.linkedinProfile;
-    if(github) github.href = s.githubProfile;
+    if (linkedIn) linkedIn.href = s.linkedinProfile;
+    if (github) github.href = s.githubProfile;
 }
 
-// 1. Render Services (Now handles TOPICS)
 function renderServices() {
     const container = document.getElementById('services-container');
     if (!container) return;
@@ -73,7 +65,6 @@ function renderServices() {
         const div = document.createElement('div');
         div.className = 'col-lg-4 fade-in';
 
-        // Handle topics for Services
         const topicsHtml = (service.topics || []).map(topic =>
             `<span class="topic-tag">${topic}</span>`
         ).join('');
@@ -98,14 +89,10 @@ function renderServices() {
     });
 }
 
-// 2. Render Products (Restored the Buttons)
-// REPLACE your existing renderProducts function with this:
-
 function renderProducts() {
     const container = document.getElementById('products-container');
     if (!container) return;
 
-    // Clear container
     container.innerHTML = '';
 
     config.products.forEach((prod, index) => {
@@ -133,7 +120,6 @@ function renderProducts() {
     });
 }
 
-// Animations and Smooth Scroll
 function initializeAnimations() {
     window.addEventListener('scroll', () => {
         const nav = document.getElementById('mainNav');

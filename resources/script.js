@@ -30,22 +30,36 @@ async function initializePage() {
     }
 }
 
+// REPLACE your existing updateHeader function with this:
+
 function updateHeader() {
     const s = config.settings;
-    document.getElementById('site-name').innerHTML = `<i class="fas fa-code me-2"></i>${s.siteName}`;
+    
+    // 1. Update Site Name & Link it to Email
+    const siteNameEl = document.getElementById('site-name');
+    if (siteNameEl) {
+        siteNameEl.innerHTML = `<i class="fas fa-code me-2"></i>${s.siteName}`;
+        
+        // Set the href to mailto
+        if (s.email) {
+            siteNameEl.href = `mailto:${s.email}`;
+        }
+    }
+
+    // 2. Update Hero Section Text
     document.getElementById('hero-title').textContent = s.heroTitle;
     document.getElementById('hero-subtitle').textContent = s.heroSubtitle;
     document.getElementById('hero-description').textContent = s.heroDescription;
-
-    // Update Email Button
+    
+    // 3. Update Contact Button in Hero
     const emailBtn = document.getElementById('contact-email-btn');
-    if (emailBtn && s.email) emailBtn.href = `mailto:${s.email}`;
+    if(emailBtn && s.email) emailBtn.href = `mailto:${s.email}`;
 
-    // Links
+    // 4. Update Social Links
     const linkedIn = document.getElementById('footer-linkedin-link');
     const github = document.getElementById('footer-github-link');
-    if (linkedIn) linkedIn.href = s.linkedinProfile;
-    if (github) github.href = s.githubProfile;
+    if(linkedIn) linkedIn.href = s.linkedinProfile;
+    if(github) github.href = s.githubProfile;
 }
 
 // 1. Render Services (Now handles TOPICS)

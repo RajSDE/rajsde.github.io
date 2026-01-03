@@ -2,11 +2,12 @@
   "settings": {
     "siteName": "RajSDE",
     "heroTitle": "Backend Architect & Freelance Consultant",
-    "heroSubtitle": "Specializing in High-Performance Microservices & Infrastructure",
+    "heroSubtitle": "Specializing in High-Performance Microservices & Infrastructure Building",
     "heroDescription": "I build scalable backend systems, configure enterprise-grade load balancers, and design robust API Gateways for startups and MNCs.",
     "githubProfile": "https://github.com/RajSDE",
     "linkedinProfile": "https://linkedin.com/in/RajSDE",
-    "email": "rajkumar.forbusiness@gmail.com"
+    "email": "rajkumar.forbusiness@gmail.com",
+    "businessEmail": "Business Mail:"
   },
   "services": [
     {

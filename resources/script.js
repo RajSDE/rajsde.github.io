@@ -18,6 +18,7 @@ async function initializePage() {
         renderServices();
         renderProducts();
         initializeAnimations();
+        setupScrollTop();
 
         const loading = document.getElementById('loading');
         const container = document.getElementById('products-container');
@@ -141,3 +142,25 @@ function initializeAnimations() {
 
 document.addEventListener('DOMContentLoaded', initializePage);
 
+// Handle Scroll to Top Logic
+function setupScrollTop() {
+    const btn = document.getElementById('scrollTopBtn');
+    if (!btn) return;
+
+    // 1. Show/Hide button on scroll
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            btn.classList.add('visible');
+        } else {
+            btn.classList.remove('visible');
+        }
+    });
+
+    // 2. Smooth scroll to top on click
+    btn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}

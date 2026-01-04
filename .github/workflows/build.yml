@@ -1,14 +1,14 @@
-name: Deploy Angular to GitHub Pages
+name: Build Angular (DEV)
 
 on:
   push:
-    branches: ["RELEASE"]
+    branches: ["DEV"]
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  build-and-deploy:
+  build-only:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -25,12 +25,7 @@ jobs:
         working-directory: ./rajsde-portfolio
         run: npm ci
 
-      - name: Build
+      - name: Build Check
         working-directory: ./rajsde-portfolio
+        # This compiles the app to check for errors but does not deploy
         run: npm run build -- --configuration production --base-href /
-
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: rajsde-portfolio/dist/rajsde-portfolio/browser
-          branch: gh-pages

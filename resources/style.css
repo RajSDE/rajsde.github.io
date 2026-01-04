@@ -757,3 +757,20 @@ section {
 .navbar-toggler[aria-expanded="false"] .toggle-icon-close {
     display: none !important;
 }
+
+@media (max-width: 991px) {
+    .navbar-nav .nav-item {
+        position: relative;
+        width: 100%;
+    }
+
+    .navbar-nav .nav-item::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(0,0,0,0.15), transparent); 
+        margin: 10px auto;
+    }
+
+}

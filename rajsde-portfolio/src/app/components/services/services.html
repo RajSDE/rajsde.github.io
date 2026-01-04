@@ -1,0 +1,29 @@
+<section id="services" class="section-padding bg-light">
+    <div class="container">
+        <div class="text-center mb-5 fade-in">
+            <h2 class="section-title">Services</h2>
+            <p class="section-subtitle">Specialized backend solutions for complex problems</p>
+        </div>
+        
+        <div id="services-container" class="row g-4">
+            <div class="col-lg-4 fade-in" *ngFor="let service of services">
+                <div class="service-card h-100">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="icon-box me-3">
+                            <i class="fas {{ service.icon }} fa-lg"></i>
+                        </div>
+                        <h4 class="fw-bold mb-0">{{ service.title }}</h4>
+                    </div>
+                    
+                    <p class="text-muted mb-4 flex-grow-1">{{ service.description }}</p>
+                    
+                    <div class="repo-topics mt-auto">
+                        <span class="topic-tag" *ngFor="let topic of service.topics">
+                            {{ topic }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

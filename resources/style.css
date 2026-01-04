@@ -672,3 +672,33 @@ section {
         opacity: 0;
     }
 }
+
+/* --- Fix Navbar Spacing on Mobile --- */
+@media (max-width: 500px) {
+    /* 1. Shrink the logo slightly */
+    .navbar-brand {
+        font-size: 1.2rem;
+        margin-right: 0.5rem; /* Reduce gap between logo and badge */
+    }
+
+    /* 2. Adjust the badge size and spacing */
+    .badge-availability {
+        font-size: 0.65rem;
+        padding: 4px 8px;
+        white-space: nowrap; /* Keep badge text on one line */
+    }
+
+    /* 3. Tweak the hamburger button */
+    .navbar-toggler {
+        padding: 4px 8px;
+        font-size: 0.9rem;
+        margin-left: 0.5rem; /* Small gap from badge */
+    }
+
+    /* 4. Ensure the green dot inside badge stays round */
+    .status-dot {
+        width: 6px;
+        height: 6px;
+        margin-right: 6px;
+    }
+}

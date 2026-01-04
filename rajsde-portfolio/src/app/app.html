@@ -1,0 +1,21 @@
+<div *ngIf="data; else loading">
+  <app-navbar [settings]="data.settings"></app-navbar>
+  <app-hero [settings]="data.settings"></app-hero>
+  <app-services [services]="data.services"></app-services>
+  <app-experience [products]="data.products"></app-experience>
+  <app-contact [settings]="data.settings"></app-contact>
+  <app-footer [settings]="data.settings"></app-footer>
+
+  <button id="scrollTopBtn" class="scroll-top-btn" 
+          [class.visible]="showScrollBtn" 
+          (click)="scrollToTop()" 
+          aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+</div>
+
+<ng-template #loading>
+  <div class="loading-container">
+    <div class="loading-spinner"></div>
+  </div>
+</ng-template>

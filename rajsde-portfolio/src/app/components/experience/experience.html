@@ -1,0 +1,32 @@
+<section id="products" class="section-padding bg-light">
+    <div class="container">
+        <div class="text-center mb-5 fade-in">
+            <h2 class="section-title">Experience</h2>
+            <p class="section-subtitle">Production-ready modules and past deliverables</p>
+        </div>
+
+        <div id="products-container" class="row g-4">
+            <div class="col-lg-4 col-md-6 fade-in" *ngFor="let prod of products">
+                <div class="service-card h-100" [ngClass]="{'inactive': !prod.isActive}">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <h5 class="fw-bold mb-0">{{ prod.title }}</h5>
+                        
+                        <span *ngIf="prod.isActive; else inDev" 
+                              class="badge bg-success-subtle text-success rounded-pill">Ready</span>
+                        <ng-template #inDev>
+                            <span class="badge bg-secondary-subtle text-secondary rounded-pill">In Dev</span>
+                        </ng-template>
+                    </div>
+                    
+                    <p class="text-muted small mb-3 flex-grow-1">{{ prod.description }}</p>
+                    
+                    <div class="repo-topics mt-auto">
+                        <span class="topic-tag" *ngFor="let topic of prod.topics">
+                            {{ topic }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -422,7 +422,7 @@ body {
 @media (max-width: 560px) {
     .hero-section {
         text-align: center;
-        padding-top: 60px;
+        padding-top: 40px;
     }
 
     .hero-content {

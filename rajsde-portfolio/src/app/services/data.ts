@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { PortfolioData } from '../models/portfolio';
+import { PORTFOLIO_DATA } from '../data/portfolio-data'; // Import the constant
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  private jsonUrl = 'assets/data/repositories.json';
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   getData(): Observable<PortfolioData> {
-    return this.http.get<PortfolioData>(this.jsonUrl);
+    // Return the constant data instantly as an Observable
+    return of(PORTFOLIO_DATA);
   }
 }

@@ -22,16 +22,19 @@ export class App implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this.dataService.getData().subscribe({
-      next: (response) => {
-        this.data = response;
-      },
-      error: (err) => console.error('Failed to load data', err)
-    });
+    // FIX: Only fetch data if we are running in the browser!
+    // This prevents the build process from crashing.
+    if (this.isBrowser) {
+      this.dataService.getData().subscribe({
+        next: (response) => {
+          this.data = response;
+        },
+        error: (err) => console.error('Failed to load data', err)
+      });
+    }
   }
 
   ngAfterViewInit() {
-    // FIX: Only run this code if we are in the browser!
     if (this.isBrowser) {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -47,7 +50,6 @@ export class App implements OnInit, AfterViewInit {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    // FIX: Only check scroll in the browser
     if (this.isBrowser) {
       this.showScrollBtn = window.scrollY > 300;
     }

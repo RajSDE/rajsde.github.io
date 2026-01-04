@@ -1,0 +1,60 @@
+import { PortfolioData } from '../models/portfolio';
+
+export const PORTFOLIO_DATA: PortfolioData = {
+  settings: {
+    siteName: "RajSDE",
+    heroTitle: "Software Architect & IT Consultant",
+    heroSubtitle: "Specializing in High-Performance Microservices & Infrastructure Building",
+    heroDescription: "I build scalable backend systems, configure enterprise-grade load balancers, and design robust API Gateways for startups and MNCs.",
+    githubProfile: "https://github.com/RajSDE",
+    linkedinProfile: "https://linkedin.com/in/RajSDE",
+    email: "rajkumar.forbusiness@gmail.com",
+    businessEmail: "Business Mail:"
+  },
+  services: [
+    {
+      icon: "fa-server",
+      title: "Microservices Development",
+      description: "Decomposing monoliths into scalable Spring Boot microservices. Implementation of Service Registry, Circuit Breakers, and Distributed Tracing.",
+      topics: ["Spring Boot", "Java 17", "Docker", "Microservices"]
+    },
+    {
+      icon: "fa-network-wired",
+      title: "API Gateway & Load Balancing",
+      description: "Configuration of Nginx reverse proxies, API Gateways, and Load Balancers to handle high traffic with 99.9% uptime reliability.",
+      topics: ["Nginx", "Linux", "Security", "Networking"]
+    },
+    {
+      icon: "fa-database",
+      title: "Backend Optimization",
+      description: "Database tuning, query optimization, and setting up config servers. I fix slow APIs and optimize infrastructure costs.",
+      topics: ["PostgreSQL", "Redis", "SQL Tuning", "Cost-Opt"]
+    }
+  ],
+  products: [
+    {
+      title: "E-Commerce Backend Core",
+      description: "Decomposing monoliths into scalable Spring Boot microservices. Implementation of Service Registry, Circuit Breakers, and Distributed Tracing.",
+      url: "https://github.com/RajSDE/Ecommerce-Core",
+      isActive: true,
+      language: "Java",
+      topics: ["Spring Boot", "Kafka", "Microservices"]
+    },
+    {
+      title: "Custom API Gateway Wrapper",
+      description: "A lightweight wrapper around Nginx for dynamic routing and rate limiting configurations.",
+      url: "https://github.com/RajSDE/Nginx-Wrapper",
+      isActive: true,
+      language: "Shell",
+      topics: ["Nginx", "DevOps", "Lua"]
+    },
+    {
+      title: "FinTech Transaction Engine",
+      description: "High-concurrency ledger system designed for accuracy and speed in financial transactions.",
+      url: "#",
+      isActive: true,
+      language: "Java",
+      topics: ["Fintech", "Concurrency", "SQL"]
+    }
+  ]
+};

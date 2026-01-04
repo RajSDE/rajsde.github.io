@@ -3,6 +3,7 @@ import { PortfolioData } from '../models/portfolio';
 export const PORTFOLIO_DATA: PortfolioData = {
   settings: {
     siteName: "RajSDE",
+    heroName: "Raj Kumar",
     heroTitle: "Software Architect & IT Consultant",
     heroSubtitle: "Specializing in High-Performance Microservices & Infrastructure Building",
     heroDescription: "I build scalable backend systems, configure enterprise-grade load balancers, and design robust API Gateways for startups and MNCs.",

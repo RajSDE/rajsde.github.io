@@ -1,5 +1,6 @@
 export interface Settings {
   siteName: string;
+  heroName?: string;
   heroTitle: string;
   heroSubtitle: string;
   heroDescription: string;

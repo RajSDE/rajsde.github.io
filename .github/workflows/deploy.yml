@@ -1,0 +1,34 @@
+name: Deploy Angular to GitHub Pages
+
+on:
+  push:
+    branches: ["DEV", "RELEASE"]
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build
+        # Since your repo is rajsde.github.io, base-href must be /
+        run: npm run build -- --configuration production --base-href /
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist/rajsde-portfolio/browser
+          branch: gh-pages

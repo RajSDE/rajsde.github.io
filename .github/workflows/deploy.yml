@@ -17,22 +17,20 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '22'   # <--- UPDATED THIS from 18 to 22
           cache: 'npm'
-          # Tells cache to look for the lock file in the subfolder
           cache-dependency-path: rajsde-portfolio/package-lock.json
 
       - name: Install Dependencies
-        working-directory: ./rajsde-portfolio    # <--- CRITICAL: Runs inside your project folder
+        working-directory: ./rajsde-portfolio
         run: npm ci
 
       - name: Build
-        working-directory: ./rajsde-portfolio    # <--- CRITICAL: Runs build inside your project folder
+        working-directory: ./rajsde-portfolio
         run: npm run build -- --configuration production --base-href /
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          # Path from Root -> Subfolder -> Dist -> Project -> Browser
-          folder: rajsde-portfolio/dist/rajsde-portfolio/browser 
+          folder: rajsde-portfolio/dist/rajsde-portfolio/browser
           branch: gh-pages

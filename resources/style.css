@@ -718,13 +718,11 @@ section {
     cursor: pointer;
     z-index: 1000;
     
-    /* Flexbox to center the arrow icon */
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
     
-    /* Hidden by default */
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
@@ -741,4 +739,21 @@ section {
     background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);;
     transform: translateY(-5px); /* Little lift effect */
     box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.navbar-toggler[aria-expanded="true"] .toggle-icon-open {
+    display: none !important;
+}
+
+.navbar-toggler[aria-expanded="true"] .toggle-icon-close {
+    display: inline-block !important;
+}
+
+.navbar-toggler[aria-expanded="false"] .toggle-icon-close {
+    display: none !important;
 }

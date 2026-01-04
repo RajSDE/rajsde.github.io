@@ -647,12 +647,14 @@ section {
     height: 100%;
     background-color: inherit;
     border-radius: 50%;
-    animation: pulse-ring 2s infinite;
+    animation: pulse-ring 1s infinite;
 }
 
 @media (max-width: 991px) {
     .badge-availability {
         font-size: 0.6rem;
+        padding: 4px 10px;
+        letter-spacing: -0.5px;
     }
 
 }

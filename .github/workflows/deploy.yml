@@ -19,16 +19,20 @@ jobs:
         with:
           node-version: '18'
           cache: 'npm'
+          # Tells cache to look for the lock file in the subfolder
+          cache-dependency-path: rajsde-portfolio/package-lock.json
 
       - name: Install Dependencies
+        working-directory: ./rajsde-portfolio    # <--- CRITICAL: Runs inside your project folder
         run: npm ci
 
       - name: Build
-        # Since your repo is rajsde.github.io, base-href must be /
+        working-directory: ./rajsde-portfolio    # <--- CRITICAL: Runs build inside your project folder
         run: npm run build -- --configuration production --base-href /
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist/rajsde-portfolio/browser
+          # Path from Root -> Subfolder -> Dist -> Project -> Browser
+          folder: rajsde-portfolio/dist/rajsde-portfolio/browser 
           branch: gh-pages
